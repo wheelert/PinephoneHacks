@@ -1,0 +1,20 @@
+[Desktop Entry]
+Name=Pinephone Hacks
+Comment=Quick Pinephone hacks / fixes
+GenericName=Utilities
+Exec=/usr/bin/python /usr/share/PinephoneHacks/main.py
+Icon=PinephoneHacks
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;Utility;Development;
+MimeType=text/plain;
+Terminal=false
+X-Ubuntu-Touch=true
+X-Ayatana-Appmenu-Show-Stubs=false
+X-Ubuntu-Single-Instance=true
+X-Ubuntu-Splash-Show-Header=false
+#X-Ubuntu-Splash-Image=/usr/share/PinephoneHacks/icon.svg
+X-Ubuntu-Splash-Color-Header=#3575db
+X-Ubuntu-Splash-Color=#3575db
+X-Ubuntu-Splash-Color-Footer=#3575db
+
