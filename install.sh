@@ -10,4 +10,6 @@ fi
 echo -e "\e[32m [ Installing Pinephone Hacks ]\e[0m"
 mkdir $APPDIR
 cp main.py $APPDIR
+cp PinephoneHacks.css $APPDIR
+cp PinephoneHacks.png $APPDIR
 cp PinephoneHacks.desktop /usr/share/applications/
