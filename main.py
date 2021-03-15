@@ -36,7 +36,7 @@ class MyWindow(Gtk.Window):
 
     def on_button_clicked(self, widget):
         print("Connecting WAN")
-        output = subprocess.Popen(['/usr/bin/ofonoctl', 'wan', '--connect','--ap'], text=True,
+        output = subprocess.Popen(['/usr/bin/pkexec','/usr/bin/ofonoctl', 'wan', '--connect','--ap'], text=True,
         stdout=subprocess.PIPE)
 
         stdout, _ = output.communicate()
