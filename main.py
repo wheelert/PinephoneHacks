@@ -1,5 +1,6 @@
 import gi
-import subprocess 
+import subprocess
+import dbus
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk,Gdk
@@ -36,11 +37,26 @@ class MyWindow(Gtk.Window):
 
     def on_button_clicked(self, widget):
         print("Connecting WAN")
-        output = subprocess.Popen(['/usr/bin/pkexec','/usr/bin/ofonoctl', 'wan', '--connect','--ap'], text=True,
-        stdout=subprocess.PIPE)
+        
+        bus = dbus.SystemBus()
+        proxy = bus.get_object('org.freedesktop.PolicyKit1', '/org/freedesktop/PolicyKit1/Authority')
+        authority = dbus.Interface(proxy, dbus_interface='org.freedesktop.PolicyKit1.Authority')
 
-        stdout, _ = output.communicate()
-        print("output>>"+stdout)
+        system_bus_name = bus.get_unique_name()
+
+        subject = ('system-bus-name', {'name' : system_bus_name})
+        action_id = 'org.freedesktop.policykit.exec'
+        details = {}
+        flags = 1            # AllowUserInteraction flag
+        cancellation_id = '' # No cancellation id
+
+        result = authority.CheckAuthorization(subject, action_id, details, flags, cancellation_id)
+        if(result[0] == 1):
+            output = subprocess.Popen(['/usr/bin/pkexec','/usr/bin/ofonoctl', 'wan', '--connect','--ap'], text=True,
+            stdout=subprocess.PIPE)
+
+            stdout, _ = output.communicate()
+            print("output>>"+stdout)
         
     def AppClose(self, widget):
         exit()
