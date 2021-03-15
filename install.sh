@@ -14,4 +14,4 @@ cp PinephoneHacks.css $APPDIR
 cp PinephoneHacks.png $APPDIR
 cp PinephoneHacks.sh $APPDIR
 cp PinephoneHacks.desktop /usr/share/applications/
-cp org.freedesktop.policykit.PinephoneHacks.sh /usr/share/polkit-1/actions/
+cp org.freedesktop.policykit.PinephoneHacks.policy /usr/share/polkit-1/actions/
