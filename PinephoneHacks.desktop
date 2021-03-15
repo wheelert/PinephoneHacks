@@ -2,7 +2,7 @@
 Name=Pinephone Hacks
 Comment=Quick Pinephone hacks / fixes
 GenericName=Utilities
-Exec=/usr/bin/python /usr/share/PinephoneHacks/main.py
+Exec=/usr/share/PinephoneHacks/PinephoneHacks.sh
 Icon=/usr/share/PinephoneHacks/PinephoneHacks.png
 Type=Application
 StartupNotify=true

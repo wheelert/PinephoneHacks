@@ -12,4 +12,5 @@ mkdir $APPDIR
 cp main.py $APPDIR
 cp PinephoneHacks.css $APPDIR
 cp PinephoneHacks.png $APPDIR
+cp PinephoneHacks.sh $APPDIR
 cp PinephoneHacks.desktop /usr/share/applications/
