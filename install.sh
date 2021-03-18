@@ -12,6 +12,5 @@ mkdir $APPDIR
 cp main.py $APPDIR
 cp PinephoneHacks.css $APPDIR
 cp PinephoneHacks.png $APPDIR
-cp PinephoneHacks.sh $APPDIR
 cp PinephoneHacks.desktop /usr/share/applications/
 cp org.freedesktop.policykit.PinephoneHacks.policy /usr/share/polkit-1/actions/
